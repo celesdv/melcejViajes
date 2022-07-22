@@ -36,7 +36,7 @@ public class PaymentEntity {
 
   @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   @JoinColumn(name = "BOOKING_ID")
-  private BookingEntity bookingEntity;
+  private BookingEntity booking;
 
   @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   @JoinColumn(name = "USER_ID")

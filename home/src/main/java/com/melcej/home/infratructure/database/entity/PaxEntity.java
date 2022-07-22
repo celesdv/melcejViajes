@@ -2,11 +2,15 @@ package com.melcej.home.infratructure.database.entity;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -31,13 +35,17 @@ public class PaxEntity {
   @Column(name = "PAX_ID")
   private Long id;
 
+  @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  @JoinColumn(name = "BOOKING_ID")
+  private BookingEntity booking;
+
   @Column(name = "FIRST_NAME", nullable = false)
   private String firstName;
 
   @Column(name = "LAST_NAME", nullable = false)
   private String lastName;
 
-  @Column(name = "dni", nullable = false, unique = true)
+  @Column(name = "dni", nullable = false)
   private String dni;
 
   @Column(name = "PASSPORT")
