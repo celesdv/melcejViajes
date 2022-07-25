@@ -11,7 +11,7 @@ import lombok.Setter;
 public class Budget {
 
   private Long id;
-  private OrderEntity order;
+  private Order order;
   private String detail;
   private Double totalPrice;
   private Boolean softDelete;
