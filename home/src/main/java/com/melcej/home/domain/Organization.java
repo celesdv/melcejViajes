@@ -16,6 +16,7 @@ public class Organization {
   private String phone;
   private String email;
   private String aboutUsText;
+  private SocialMedia socialMedia;
   private Boolean softDelete;
 
 }
