@@ -1,4 +1,4 @@
-package com.melcej.home.infratructure.config.spring.config.common;
+package com.melcej.home.infratructure.config.spring.config.security.common;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

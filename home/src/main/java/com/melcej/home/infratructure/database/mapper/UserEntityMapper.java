@@ -1,7 +1,7 @@
 package com.melcej.home.infratructure.database.mapper;
 
 import com.melcej.home.domain.User;
-import com.melcej.home.infratructure.config.spring.config.common.JwtUtils;
+import com.melcej.home.infratructure.config.spring.config.security.common.JwtUtils;
 import com.melcej.home.infratructure.database.entity.UserEntity;
 import java.util.ArrayList;
 import java.util.Collections;
