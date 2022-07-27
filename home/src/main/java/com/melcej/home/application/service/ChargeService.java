@@ -7,7 +7,10 @@ import com.melcej.home.application.service.usecase.delete.IDeleteChargeUseCase;
 import com.melcej.home.application.service.usecase.get.IGetChargeUseCase;
 import com.melcej.home.application.service.usecase.list.IListChargeUseCase;
 import com.melcej.home.application.service.usecase.update.IUpdateChargeUseCase;
+import com.melcej.home.domain.Booking;
 import com.melcej.home.domain.Charge;
+import com.melcej.home.domain.Client;
+import com.melcej.home.domain.User;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -48,7 +51,42 @@ public class ChargeService implements ICreateChargeUseCase, IDeleteChargeUseCase
   }
 
   @Override
-  public Charge update(Charge charge) {
-    return null;
+  public Charge update(Charge chargeUpdate) {
+    Charge chargeSaved = find(chargeUpdate.getId());
+    chargeSaved.setSoftDelete(false);
+    updateValues(chargeSaved, chargeUpdate);
+    return chargeRepository.update(chargeSaved);
+  }
+
+  private void updateValues(Charge chargeSaved, Charge chargeUpdate) {
+    Booking booking = chargeUpdate.getBooking();
+    if (booking != null){
+      chargeSaved.setBooking(booking);
+    }
+
+    User user = chargeUpdate.getUser();
+    if (user != null){
+      chargeSaved.setUser(user);
+    }
+
+    Client client = chargeUpdate.getClient();
+    if (client != null){
+      chargeSaved.setClient(client);
+    }
+
+    Double amount = chargeUpdate.getAmount();
+    if (amount != null){
+      chargeSaved.setAmount(amount);
+    }
+
+    String method = chargeUpdate.getMethod();
+    if (method != null){
+      chargeSaved.setMethod(method);
+    }
+
+    String detail = chargeUpdate.getDetail();
+    if (detail != null){
+      chargeSaved.setDetail(detail);
+    }
   }
 }
