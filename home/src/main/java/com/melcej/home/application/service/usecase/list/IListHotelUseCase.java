@@ -9,4 +9,6 @@ public interface IListHotelUseCase {
 
   Page<Hotel> findAll(PageRequest pageRequest);
 
+  List<Hotel> findAllByBudget(Long id);
+
 }

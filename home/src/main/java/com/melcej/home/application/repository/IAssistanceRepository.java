@@ -17,6 +17,8 @@ public interface IAssistanceRepository {
 
   Page<Assistance> findAll(PageRequest pageable);
 
+  List<Assistance> findAllByBudget(Long id);
+
   Assistance findBy(Long id);
 
   Assistance update(Assistance assistance);

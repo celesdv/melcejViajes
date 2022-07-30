@@ -51,6 +51,11 @@ public class ExcursionService implements ICreateExcursionUseCase, IDeleteExcursi
   }
 
   @Override
+  public List<Excursion> findAllByBudget(Long id) {
+    return excursionRepository.findAllByBudget(id);
+  }
+
+  @Override
   public Excursion update(Excursion excursionUpdate) {
     Excursion excursionSaved = find(excursionUpdate.getId());
     excursionSaved.setSoftDelete(false);

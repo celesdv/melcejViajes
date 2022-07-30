@@ -51,6 +51,11 @@ public class TransferService implements ICreateTransferUseCase, IDeleteTransferU
   }
 
   @Override
+  public List<Transfer> findAllByBudget(Long id) {
+    return transferRepository.findAllByBudget(id);
+  }
+
+  @Override
   public Transfer update(Transfer transferUpdate) {
     Transfer transferSaved = find(transferUpdate.getId());
     transferSaved.setSoftDelete(false);

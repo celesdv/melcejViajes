@@ -9,4 +9,6 @@ public interface IListFlightUseCase {
 
   Page<Flight> findAll(PageRequest pageRequest);
 
+  List<Flight> findAllByBudget(Long id);
+
 }

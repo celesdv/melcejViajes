@@ -17,6 +17,8 @@ public interface ICannedRepository {
 
   Page<Canned> findAll(PageRequest pageRequest);
 
+  List<Canned> findAllByBudget(Long id);
+
   Canned findBy(Long id);
 
   Canned update(Canned canned);

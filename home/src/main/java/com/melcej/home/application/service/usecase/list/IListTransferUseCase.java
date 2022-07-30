@@ -9,4 +9,6 @@ public interface IListTransferUseCase {
 
   Page<Transfer> findAll(PageRequest pageRequest);
 
+  List<Transfer> findAllByBudget(Long id);
+
 }

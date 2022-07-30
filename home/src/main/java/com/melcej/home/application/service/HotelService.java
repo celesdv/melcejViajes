@@ -51,6 +51,11 @@ public class HotelService implements ICreateHotelUseCase, IDeleteHotelUseCase, I
   }
 
   @Override
+  public List<Hotel> findAllByBudget(Long id) {
+    return hotelRepository.findAllByBudget(id);
+  }
+
+  @Override
   public Hotel update(Hotel hotelUpdate) {
     Hotel hotelSaved = find(hotelUpdate.getId());
     hotelSaved.setSoftDelete(false);

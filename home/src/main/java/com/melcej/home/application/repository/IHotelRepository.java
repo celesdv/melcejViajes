@@ -17,6 +17,8 @@ public interface IHotelRepository {
 
   Page<Hotel> findAll(PageRequest pageRequest);
 
+  List<Hotel> findAllByBudget(Long id);
+
   Hotel findBy(Long id);
 
   Hotel update(Hotel hotel);

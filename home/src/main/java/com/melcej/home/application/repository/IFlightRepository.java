@@ -17,6 +17,8 @@ public interface IFlightRepository {
 
   Page<Flight> findAll(PageRequest pageRequest);
 
+  List<Flight> findAllByBudget(Long id);
+
   Flight findBy(Long id);
 
   Flight update(Flight flight);

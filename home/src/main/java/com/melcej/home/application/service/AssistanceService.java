@@ -12,7 +12,6 @@ import com.melcej.home.domain.Budget;
 import com.melcej.home.domain.Supplier;
 import java.util.List;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -49,6 +48,11 @@ public class AssistanceService implements ICreateAssistanceUseCase, IDeleteAssis
   @Override
   public Page<Assistance> findAll(PageRequest pageRequest) {
     return assistanceRepository.findAll(pageRequest);
+  }
+
+  @Override
+  public List<Assistance> findAllByBudget(Long id) {
+    return assistanceRepository.findAllByBudget(id);
   }
 
   @Override

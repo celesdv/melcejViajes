@@ -8,7 +8,6 @@ import com.melcej.home.application.service.usecase.get.IGetClientUseCase;
 import com.melcej.home.application.service.usecase.list.IListClientUseCase;
 import com.melcej.home.application.service.usecase.update.IUpdateClientUseCase;
 import com.melcej.home.domain.Client;
-import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

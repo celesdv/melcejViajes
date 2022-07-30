@@ -9,4 +9,6 @@ public interface IListExcursionUseCase {
 
   Page<Excursion> findAll(PageRequest pageRequest);
 
+  List<Excursion> findAllByBudget(Long id);
+
 }

@@ -17,6 +17,8 @@ public interface ITransferRepository {
 
   Page<Transfer> findAll(PageRequest pageRequest);
 
+  List<Transfer> findAllByBudget(Long id);
+
   Transfer findBy(Long id);
 
   Transfer update(Transfer transfer);

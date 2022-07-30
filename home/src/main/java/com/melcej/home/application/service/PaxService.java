@@ -10,7 +10,6 @@ import com.melcej.home.application.service.usecase.update.IUpdatePaxUseCase;
 import com.melcej.home.domain.Booking;
 import com.melcej.home.domain.Pax;
 import java.time.LocalDate;
-import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

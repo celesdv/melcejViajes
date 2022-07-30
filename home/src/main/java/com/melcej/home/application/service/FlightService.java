@@ -51,6 +51,11 @@ public class FlightService implements ICreateFlightUseCase, IDeleteFlightUseCase
   }
 
   @Override
+  public List<Flight> findAllByBudget(Long id) {
+    return flightRepository.findAllByBudget(id);
+  }
+
+  @Override
   public Flight update(Flight flightUpdate) {
     Flight flightSaved = find(flightUpdate.getId());
     flightSaved.setSoftDelete(false);

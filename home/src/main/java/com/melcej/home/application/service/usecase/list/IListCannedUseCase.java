@@ -9,4 +9,6 @@ public interface IListCannedUseCase {
 
   Page<Canned> findAll(PageRequest pageRequest);
 
+  List<Canned> findAllByBudget(Long id);
+
 }

@@ -17,6 +17,8 @@ public interface IExcursionRepository {
 
   Page<Excursion> findAll(PageRequest pageRequest);
 
+  List<Excursion> findAllByBudget(Long id);
+
   Excursion findBy(Long id);
 
   Excursion update(Excursion excursion);

@@ -11,7 +11,6 @@ import com.melcej.home.domain.Booking;
 import com.melcej.home.domain.Charge;
 import com.melcej.home.domain.Client;
 import com.melcej.home.domain.User;
-import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

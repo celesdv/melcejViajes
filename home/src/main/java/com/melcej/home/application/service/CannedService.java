@@ -51,6 +51,11 @@ public class CannedService implements ICreateCannedUseCase, IDeleteCannedUseCase
   }
 
   @Override
+  public List<Canned> findAllByBudget(Long id) {
+    return cannedRepository.findAllByBudget(id);
+  }
+
+  @Override
   public Canned update(Canned cannedUpdate) {
     Canned cannedSaved = find(cannedUpdate.getId());
     cannedSaved.setSoftDelete(false);
