@@ -2,6 +2,8 @@ package com.melcej.home.application.repository;
 
 import com.melcej.home.domain.Booking;
 import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 public interface IBookingRepository {
 
@@ -13,7 +15,7 @@ public interface IBookingRepository {
 
   void delete(Long id);
 
-  List<Booking> findAllActive();
+  Page<Booking> findAll(PageRequest pageRequest);
 
   Booking findBy(Long id);
 

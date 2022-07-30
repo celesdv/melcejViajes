@@ -2,6 +2,8 @@ package com.melcej.home.application.repository;
 
 import com.melcej.home.domain.Budget;
 import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 public interface IBudgetRepository {
 
@@ -13,7 +15,7 @@ public interface IBudgetRepository {
 
   void delete(Long id);
 
-  List<Budget> findAllActive();
+  Page<Budget> findAll(PageRequest pageRequest);
 
   Budget findBy(Long id);
 

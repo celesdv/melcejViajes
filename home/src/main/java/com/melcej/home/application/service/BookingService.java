@@ -12,6 +12,8 @@ import com.melcej.home.domain.Budget;
 import com.melcej.home.domain.Client;
 import java.util.List;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @AllArgsConstructor
@@ -44,9 +46,8 @@ public class BookingService implements ICreateBookingUseCase, IDeleteBookingUseC
   }
 
   @Override
-  public List<Booking> findAll() {
-    // TODO: 26/7/2022
-    return null;
+  public Page<Booking> findAll(PageRequest pageRequest) {
+    return bookingRepository.findAll(pageRequest);
   }
 
   @Override

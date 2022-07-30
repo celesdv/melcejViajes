@@ -12,6 +12,8 @@ import com.melcej.home.domain.Hotel;
 import com.melcej.home.domain.Supplier;
 import java.util.List;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @AllArgsConstructor
@@ -44,9 +46,8 @@ public class HotelService implements ICreateHotelUseCase, IDeleteHotelUseCase, I
   }
 
   @Override
-  public List<Hotel> findAll() {
-    // TODO: 27/7/2022
-    return null;
+  public Page<Hotel> findAll(PageRequest pageRequest) {
+    return hotelRepository.findAll(pageRequest);
   }
 
   @Override

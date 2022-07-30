@@ -2,6 +2,8 @@ package com.melcej.home.application.repository;
 
 import com.melcej.home.domain.Supplier;
 import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 public interface ISupplierRepository {
 
@@ -13,7 +15,7 @@ public interface ISupplierRepository {
 
   void delete(Long id);
 
-  List<Supplier> findAllActive();
+  Page<Supplier> findAll(PageRequest pageRequest);
 
   Supplier findBy(Long id);
 

@@ -13,6 +13,8 @@ import com.melcej.home.domain.Supplier;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @AllArgsConstructor
@@ -45,9 +47,8 @@ public class AssistanceService implements ICreateAssistanceUseCase, IDeleteAssis
   }
 
   @Override
-  public List<Assistance> findAll() {
-    // TODO: 26/7/2022
-    return null;
+  public Page<Assistance> findAll(PageRequest pageRequest) {
+    return assistanceRepository.findAll(pageRequest);
   }
 
   @Override
@@ -89,4 +90,5 @@ public class AssistanceService implements ICreateAssistanceUseCase, IDeleteAssis
       assistanceSaved.setDetail(detail);
     }
   }
+
 }

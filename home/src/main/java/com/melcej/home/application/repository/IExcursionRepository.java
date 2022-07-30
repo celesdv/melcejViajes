@@ -2,6 +2,8 @@ package com.melcej.home.application.repository;
 
 import com.melcej.home.domain.Excursion;
 import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 public interface IExcursionRepository {
 
@@ -13,7 +15,7 @@ public interface IExcursionRepository {
 
   void delete(Long id);
 
-  List<Excursion> findAllActive();
+  Page<Excursion> findAll(PageRequest pageRequest);
 
   Excursion findBy(Long id);
 

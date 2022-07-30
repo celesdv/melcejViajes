@@ -2,9 +2,11 @@ package com.melcej.home.application.service.usecase.list;
 
 import com.melcej.home.domain.Budget;
 import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 public interface IListBudgetUseCase {
 
-  List<Budget> findAll();
+  Page<Budget> findAll(PageRequest pageRequest);
 
 }

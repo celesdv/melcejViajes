@@ -12,6 +12,8 @@ import com.melcej.home.domain.Supplier;
 import com.melcej.home.domain.Transfer;
 import java.util.List;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @AllArgsConstructor
@@ -44,9 +46,8 @@ public class TransferService implements ICreateTransferUseCase, IDeleteTransferU
   }
 
   @Override
-  public List<Transfer> findAll() {
-    // TODO: 27/7/2022
-    return null;
+  public Page<Transfer> findAll(PageRequest pageRequest) {
+    return transferRepository.findAll(pageRequest);
   }
 
   @Override

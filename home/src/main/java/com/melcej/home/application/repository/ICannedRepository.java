@@ -2,6 +2,8 @@ package com.melcej.home.application.repository;
 
 import com.melcej.home.domain.Canned;
 import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 public interface ICannedRepository {
 
@@ -13,7 +15,7 @@ public interface ICannedRepository {
 
   void delete(Long id);
 
-  List<Canned> findAllActive();
+  Page<Canned> findAll(PageRequest pageRequest);
 
   Canned findBy(Long id);
 

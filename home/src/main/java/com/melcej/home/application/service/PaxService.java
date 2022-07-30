@@ -12,6 +12,8 @@ import com.melcej.home.domain.Pax;
 import java.time.LocalDate;
 import java.util.List;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @AllArgsConstructor
@@ -44,9 +46,8 @@ public class PaxService implements ICreatePaxUseCase, IDeletePaxUseCase, IGetPax
   }
 
   @Override
-  public List<Pax> findAll() {
-    // TODO: 27/7/2022
-    return null;
+  public Page<Pax> findAll(PageRequest pageRequest) {
+    return paxRepository.findAll(pageRequest);
   }
 
   @Override

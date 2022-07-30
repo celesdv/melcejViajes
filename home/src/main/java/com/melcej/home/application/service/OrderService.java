@@ -10,6 +10,8 @@ import com.melcej.home.application.service.usecase.update.IUpdateOrderUseCase;
 import com.melcej.home.domain.Order;
 import java.util.List;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @AllArgsConstructor
@@ -42,9 +44,9 @@ public class OrderService implements ICreateOrderUseCase, IDeleteOrderUseCase, I
   }
 
   @Override
-  public List<Order> findAll() {
-    // TODO: 27/7/2022
-    return null;
+  public Page<Order> findAll(PageRequest pageRequest) {
+    return orderRepository.findAll(pageRequest);
+    // TODO: 30/7/2022 search by soft delete
   }
 
   @Override

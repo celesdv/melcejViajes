@@ -2,6 +2,8 @@ package com.melcej.home.application.repository;
 
 import com.melcej.home.domain.Payment;
 import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 public interface IPaymentRepository {
 
@@ -13,7 +15,7 @@ public interface IPaymentRepository {
 
   void delete(Long id);
 
-  List<Payment> findAllActive();
+  Page<Payment> findAll(PageRequest pageRequest);
 
   Payment findBy(Long id);
 

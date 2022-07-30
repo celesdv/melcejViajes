@@ -2,6 +2,8 @@ package com.melcej.home.application.repository;
 
 import com.melcej.home.domain.Pax;
 import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 public interface IPaxRepository {
 
@@ -13,7 +15,7 @@ public interface IPaxRepository {
 
   void delete(Long id);
 
-  List<Pax> findAllActive();
+  Page<Pax> findAll(PageRequest pageRequest);
 
   Pax findBy(Long id);
 

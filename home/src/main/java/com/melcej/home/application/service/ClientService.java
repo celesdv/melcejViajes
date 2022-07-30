@@ -10,6 +10,8 @@ import com.melcej.home.application.service.usecase.update.IUpdateClientUseCase;
 import com.melcej.home.domain.Client;
 import java.util.List;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @AllArgsConstructor
@@ -42,9 +44,8 @@ public class ClientService implements ICreateClientUseCase, IDeleteClientUseCase
   }
 
   @Override
-  public List<Client> findAll() {
-    // TODO: 26/7/2022  
-    return null;
+  public Page<Client> findAll(PageRequest pageRequest) {
+    return clientRepository.findAll(pageRequest);
   }
 
   @Override

@@ -2,6 +2,8 @@ package com.melcej.home.application.repository;
 
 import com.melcej.home.domain.Client;
 import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 public interface IClientRepository {
 
@@ -13,7 +15,7 @@ public interface IClientRepository {
 
   void delete(Long id);
 
-  List<Client> findAllActive();
+  Page<Client> findAll(PageRequest pageRequest);
 
   Client findBy(Long id);
 

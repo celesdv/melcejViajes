@@ -12,6 +12,8 @@ import com.melcej.home.domain.Excursion;
 import com.melcej.home.domain.Supplier;
 import java.util.List;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @AllArgsConstructor
@@ -44,9 +46,8 @@ public class ExcursionService implements ICreateExcursionUseCase, IDeleteExcursi
   }
 
   @Override
-  public List<Excursion> findAll() {
-    // TODO: 26/7/2022
-    return null;
+  public Page<Excursion> findAll(PageRequest pageRequest) {
+    return excursionRepository.findAll(pageRequest);
   }
 
   @Override

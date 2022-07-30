@@ -10,6 +10,8 @@ import com.melcej.home.application.service.usecase.update.IUpdateSupplierUseCase
 import com.melcej.home.domain.Supplier;
 import java.util.List;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @AllArgsConstructor
@@ -42,9 +44,8 @@ public class SupplierService implements ICreateSupplierUseCase, IDeleteSupplierU
   }
 
   @Override
-  public List<Supplier> findAll() {
-    // TODO: 27/7/2022
-    return null;
+  public Page<Supplier> findAll(PageRequest pageRequest) {
+    return supplierRepository.findAll(pageRequest);
   }
 
   @Override

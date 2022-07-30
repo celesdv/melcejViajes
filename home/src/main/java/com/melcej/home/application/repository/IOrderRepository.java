@@ -2,6 +2,8 @@ package com.melcej.home.application.repository;
 
 import com.melcej.home.domain.Order;
 import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 public interface IOrderRepository {
 
@@ -13,7 +15,7 @@ public interface IOrderRepository {
 
   void delete(Long id);
 
-  List<Order> findAllActive();
+  Page<Order> findAll(PageRequest pageRequest);
 
   Order findBy(Long id);
 
