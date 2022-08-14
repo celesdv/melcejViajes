@@ -1,4 +1,4 @@
-package com.melcej.home.infratructure.config.spring.config.security;
+package com.melcej.home.infratructure.config.spring.security;
 
 import com.melcej.home.infratructure.database.entity.UserEntity;
 import com.melcej.home.infratructure.database.repository.spring.IUserSpringRepository;

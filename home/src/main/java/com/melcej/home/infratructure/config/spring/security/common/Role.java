@@ -1,4 +1,4 @@
-package com.melcej.home.infratructure.config.spring.config.security.common;
+package com.melcej.home.infratructure.config.spring.security.common;
 
 public enum Role {
 

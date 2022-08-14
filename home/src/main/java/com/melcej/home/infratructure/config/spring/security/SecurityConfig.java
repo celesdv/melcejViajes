@@ -1,8 +1,8 @@
-package com.melcej.home.infratructure.config.spring.config.security;
+package com.melcej.home.infratructure.config.spring.security;
 
-import com.melcej.home.infratructure.config.spring.config.security.filter.CustomAccessDeniedHandler;
-import com.melcej.home.infratructure.config.spring.config.security.filter.CustomAuthenticationEntryPoint;
-import com.melcej.home.infratructure.config.spring.config.security.filter.JwtRequestFilter;
+import com.melcej.home.infratructure.config.spring.security.filter.CustomAccessDeniedHandler;
+import com.melcej.home.infratructure.config.spring.security.filter.CustomAuthenticationEntryPoint;
+import com.melcej.home.infratructure.config.spring.security.filter.JwtRequestFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;

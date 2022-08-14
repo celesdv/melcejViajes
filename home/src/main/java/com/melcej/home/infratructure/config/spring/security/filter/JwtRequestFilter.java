@@ -1,7 +1,7 @@
-package com.melcej.home.infratructure.config.spring.config.security.filter;
+package com.melcej.home.infratructure.config.spring.security.filter;
 
-import com.melcej.home.infratructure.config.spring.config.security.common.JwtUtils;
-import com.melcej.home.infratructure.config.spring.config.security.common.ResponseUtils;
+import com.melcej.home.infratructure.config.spring.security.common.JwtUtils;
+import com.melcej.home.infratructure.config.spring.security.common.ResponseUtils;
 import io.jsonwebtoken.JwtException;
 import java.io.IOException;
 import java.util.List;

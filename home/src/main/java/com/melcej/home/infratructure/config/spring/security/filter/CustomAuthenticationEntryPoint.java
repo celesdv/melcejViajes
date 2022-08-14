@@ -1,6 +1,6 @@
-package com.melcej.home.infratructure.config.spring.config.security.filter;
+package com.melcej.home.infratructure.config.spring.security.filter;
 
-import com.melcej.home.infratructure.config.spring.config.security.common.ResponseUtils;
+import com.melcej.home.infratructure.config.spring.security.common.ResponseUtils;
 import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

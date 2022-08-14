@@ -1,4 +1,4 @@
-package com.melcej.home.infratructure.config.spring.config.security.common;
+package com.melcej.home.infratructure.config.spring.security.common;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.melcej.home.infratructure.rest.response.ErrorResponse;

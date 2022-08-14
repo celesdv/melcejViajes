@@ -1,4 +1,4 @@
-package com.melcej.home.infratructure.config.spring.config.security;
+package com.melcej.home.infratructure.config.spring.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
