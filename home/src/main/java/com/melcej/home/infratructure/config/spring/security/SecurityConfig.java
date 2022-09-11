@@ -1,5 +1,6 @@
 package com.melcej.home.infratructure.config.spring.security;
 
+import com.melcej.home.infratructure.config.spring.security.common.Role;
 import com.melcej.home.infratructure.config.spring.security.filter.CustomAccessDeniedHandler;
 import com.melcej.home.infratructure.config.spring.security.filter.CustomAuthenticationEntryPoint;
 import com.melcej.home.infratructure.config.spring.security.filter.JwtRequestFilter;
@@ -8,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -65,6 +67,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         .and()
         .authorizeRequests()
+        .antMatchers(HttpMethod.POST, "/auth/login", "/auth/register")
+        .permitAll()
+        .antMatchers(HttpMethod.GET, "/auth/me")
+        .hasAnyRole(Role.USER.name())
+        .antMatchers(HttpMethod.DELETE, "users/{id:[\\d+]}")
+        .hasAnyRole(Role.ADMIN.name(), Role.USER.name())
+        .antMatchers(HttpMethod.PUT, "/users/{id:[\\d+]}")
+        .hasAnyRole(Role.ADMIN.name(), Role.USER.name())
         .anyRequest()
         .authenticated()
         .and()

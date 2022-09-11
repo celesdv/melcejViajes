@@ -84,8 +84,8 @@ public class UserResource {
   @PutMapping(value = "/users/{id}",
       produces = {"application/json"},
       consumes = {"application/json"})
-  public ResponseEntity<UserResponse> update(
-      @PathVariable Long id, @Valid @RequestBody UpdateUserRequest updateUserRequest) {
+  public ResponseEntity<UserResponse> update(@PathVariable Long id,
+      @Valid @RequestBody UpdateUserRequest updateUserRequest) {
     User user = updateUserUseCase.update(userMapper.toDomain(id, updateUserRequest));
     UserResponse response = userMapper.toResponse(user);
     return ResponseEntity.ok(response);

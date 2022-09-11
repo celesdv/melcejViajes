@@ -38,8 +38,10 @@ public class UserEntityMapper {
         .email(userEntity.getEmail())
         .firstName(userEntity.getFirstName())
         .lastName(userEntity.getLastName())
+        .phone(userEntity.getPhone())
         .password(userEntity.getPassword())
         .token(getToken(userEntity))
+        .softDelete(userEntity.getSoftDelete())
         .role(roleEntityMapper.toDomain(userEntity.getRole()))
         .build();
   }
@@ -53,7 +55,9 @@ public class UserEntityMapper {
         .email(user.getEmail())
         .firstName(user.getFirstName())
         .lastName(user.getLastName())
+        .phone(user.getPhone())
         .password(user.getPassword())
+        .softDelete(user.getSoftDelete())
         .role(roleEntityMapper.toEntity(user.getRole()))
         .build();
   }

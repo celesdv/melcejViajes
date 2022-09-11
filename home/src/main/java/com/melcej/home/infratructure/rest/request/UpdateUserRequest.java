@@ -12,7 +12,7 @@ import org.springframework.lang.Nullable;
 @Getter
 @Setter
 @SuperBuilder
-public class UpdateUserRequest extends UserRegisterRequest {
+public class UpdateUserRequest extends UserRegisterRequest{
 
   @Nullable
   private String phone;

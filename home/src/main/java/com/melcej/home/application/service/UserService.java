@@ -1,6 +1,7 @@
 package com.melcej.home.application.service;
 
 import com.melcej.home.application.exception.RecordNotFoundException;
+import com.melcej.home.application.exception.UserAlreadyExistsException;
 import com.melcej.home.application.repository.IUserRepository;
 import com.melcej.home.application.service.usecase.add.ICreateUserUseCase;
 import com.melcej.home.application.service.usecase.delete.IDeleteUserUseCase;
@@ -23,12 +24,16 @@ public class UserService implements ICreateUserUseCase, IDeleteUserUseCase, ILis
   private final IUserRepository userRepository;
 
   @Override
-  public User add(User user) {
-    user.setRole(com.melcej.home.domain.Role.builder()
+  public User add(User newUser) {
+    if (userRepository.findByEmail(newUser.getEmail()) != null) {
+      throw new UserAlreadyExistsException(
+          "Email address: " + newUser.getEmail() + " is already being used");
+    }
+    newUser.setRole(com.melcej.home.domain.Role.builder()
         .name(Role.USER.getFullRoleName())
         .build());
-    User newUser = userRepository.add(user);
-    return newUser;
+    User user = userRepository.add(newUser);
+    return user;
   }
 
   @Override
